@@ -1,5 +1,7 @@
 # Experiment 3: DML Commands
 
+### Name : Shehan Shajahan
+### Register Number : 212223240154
 ## AIM
 To study and implement DML (Data Manipulation Language) commands.
 
@@ -47,123 +49,161 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Decrease the reorder level by 30 percent where the product name contains 'cream' and quantity in stock is higher than reorder level in the products table.
+PRODUCTS TABLE
 
 ```sql
--- Paste your SQL code below for Question 1
+UPDATE PRODUCTS SET
+reorder_lvl=reorder_lvl*0.7
+WHERE product_name LIKE '%cream%' AND quantity>reorder_lvl;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/831656b2-aea7-4c2d-98c2-c203dd9a449e)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL statement to Update the hire_date of employees in department 50 to 2024-01-24.
+
+Employees table :
+employee_id,first_name,last_name,emailphone_number,hire_date,job_id,salary,commission_pct,manager_id,department_id
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE EMPLOYEES SET
+HIRE_DATE='2024-01-24'
+WHERE DEPARTMENT_ID=50;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/fb327c54-215c-4e33-92f3-ea78623da544)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to Delete a Specific Surgery whose ID is 3 or surgeon ID is 4.
+Sample table: Surgeries
 
 ```sql
--- Paste your SQL code below for Question 3
+DELETE FROM surgeries WHERE
+surgery_id=3 OR surgeon_id=4;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/ca68d4a4-69eb-4f8b-ae5e-704473a52ff4)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to Delete customers with following conditions
+'CUST_COUNTRY' is not in a list of specified countries ('UK', 'USA', 'Canada')
+'GRADE' is greater than or equal to 3
+Sample table: Customer
 
 ```sql
--- Paste your SQL code below for Question 4
+DELETE FROM Customer WHERE
+CUST_COUNTRY NOT IN('UK', 'USA', 'Canada') AND GRADE>=3;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/9e359c5c-91ad-4a02-b4eb-0f7574001aff)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is not equal to 3.
+Sample table: Customer
 
 ```sql
--- Paste your SQL code below for Question 5
+DELETE FROM Customer
+WHERE grade!=3;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/345855d7-f442-42df-8891-4c691b127ea3)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL statement to Find all those customers with all information whose names are ending with the letter 'n'.
+customer table
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT * FROM customer
+WHERE cust_name LIKE "%n";
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/31e74c5d-fa2c-495d-8a9c-9e9bde737d39)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL statement to show all the contact_name, address, city of all customers who are from 'Germany', 'Mexico' and 'Spain' countries.
+
+customers table
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT ContactName,Address,City FROM customers
+WHERE Country IN('Germany','Mexico','Spain');
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/f4a327eb-e745-40ef-9121-8abdad0255ec)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to calculate the discount amount for each product. Return product_id, original_price, discount_percentage, and discount_amount.
+Sample table: Products
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT product_id,original_price,discount_percentage,
+original_price*discount_percentage AS discount_amount
+FROM Products;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/ffe9394e-889e-428b-9297-bf881b0b55f4)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to retrieve the year, month, and day from the hiredate column in the emp table.
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT STRFTIME('%Y',hiredate) AS Year,
+STRFTIME('%m',hiredate) AS Month,
+STRFTIME('%d',hiredate) AS Day FROM emp;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/acffde14-7eb4-4527-9c56-50c7c7d3647f)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a report that shows the capitalized FirstName and capitalized LastName renamed as FirstName and Lastname respectively and EmployeeId from the employees table sorted by EmployeeId in descending order.
+employees table
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT UPPER(FirstName) AS FirstName,UPPER(LastName) AS LastName,EmployeeID FROM employees
+ORDER BY EmployeeID DESC;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/0aa9423f-762a-49b0-ace8-caa5d8550296)
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
