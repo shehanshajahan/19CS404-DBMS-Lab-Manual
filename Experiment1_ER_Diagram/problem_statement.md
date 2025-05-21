@@ -23,50 +23,47 @@ Design a database to manage students, instructors, programs, courses, and studen
 
 ---
 
-### 🔹 Scenario 2: Hospital Database
-Design a database for patient management, appointments, medical records, and billing.
-
-**User Requirements:**
-- Patient details including contact and insurance.
-- Doctors and their departments, contact info, specialization.
-- Appointments with reason, time, patient-doctor link.
-- Medical records with treatments, diagnosis, test results.
-- Billing and payment details for each appointment.
-
----
 
 ## 📝 Tasks:
 1. Identify entities, relationships, and attributes.
 2. Draw the ER diagram using any tool (draw.io, dbdiagram.io, hand-drawn and scanned).
 3. Include:
    - Cardinality & participation constraints
-   - Prerequisites for University OR Billing for Hospital
+   - Prerequisites for University 
 4. Explain:
    - Why you chose the entities and relationships.
-   - How you modeled prerequisites or billing.
+   - How you modeled prerequisites.
 
 # ER Diagram Submission - Student Name
-
+```
+Name : Shehan Shajahan
+Register Number : 212223240154
+```
 ## Scenario Chosen:
-University / Hospital (choose one)
+University Database
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![image (3)](https://github.com/user-attachments/assets/0916079e-b3e8-4b2b-99bd-5fd315bbc010)
+
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
+- Student: StudentID,Name,Gender,DOB,Email,Phone,Address
+- Instructor: InstructorID,Name,Phone,Email
+- Department: DepartmentID,Department Name,Head of Department
+- Course: CourseID,Course Name,Credits
+- Enrollment : EnrollmentID,EnrollmentDate,Grade
+- Schedule : ScheduleID,Day,Time
+- Classroom : ClassroomID,Building,Room Number,Capacity
 ...
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
+- Enrollment (StudentID,CourseID )
+- Course (DepartmentID, CourseID)
+- Instructor(InstructorID,CourseID)
+- Schedule(CourseID,ClassroomID)
 ...
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
-
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
 
 ## RESULT
+Thus,we have created an E-R Diagram for the chosen scenario successfully defining necessary entities,attributes,relationships and constraints.
